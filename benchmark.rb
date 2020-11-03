@@ -81,12 +81,12 @@ end
 
 puts 'Testes sem sleep'
 Benchmark.bm(25) do |benchmark|
-  benchmark.report('unthreads: ') { fibonacci_without_sleep_unthreaded }
+  benchmark.report('single thread: ') { fibonacci_without_sleep_unthreaded }
   benchmark.report('with threads no pool: ') { fibonacci_without_sleep_threaded }
-  benchmark.report('with threads pool of 5: ') { fibonacci_without_sleep_threaded_with_pool(5) }
-  benchmark.report('with threads pool of 10: ') { fibonacci_without_sleep_threaded_with_pool(10) }
-  benchmark.report('with threads pool of 20: ') { fibonacci_without_sleep_threaded_with_pool(20) }
-  benchmark.report('with threads pool of 40: ') { fibonacci_without_sleep_threaded_with_pool(40) }
+  benchmark.report('with 5 threads and pool: ') { fibonacci_without_sleep_threaded_with_pool(5) }
+  benchmark.report('with 10 threads and pool: ') { fibonacci_without_sleep_threaded_with_pool(10) }
+  benchmark.report('with 20  threads and pool: ') { fibonacci_without_sleep_threaded_with_pool(20) }
+  benchmark.report('with 40  threads and pool: ') { fibonacci_without_sleep_threaded_with_pool(40) }
   benchmark.report('parallel with 5 threads: ') { fibonacci_without_sleep_parallel(5) }
   benchmark.report('parallel with 10 threads: ') { fibonacci_without_sleep_parallel(10) }
   benchmark.report('parallel with 20 threads: ') { fibonacci_without_sleep_parallel(20) }
@@ -95,12 +95,12 @@ end
 
 puts 'Testes com sleep'
 Benchmark.bm(25) do |benchmark|
-  benchmark.report('unthreads: ') { fibonacci_with_sleep_unthreaded }
+  benchmark.report('single thread: ') { fibonacci_with_sleep_unthreaded }
   benchmark.report('with threads no pool: ') { fibonacci_with_sleep_threaded }
-  benchmark.report('with threads pool of 5: ') { fibonacci_with_sleep_threaded_with_pool(5) }
-  benchmark.report('with threads pool of 10: ') { fibonacci_with_sleep_threaded_with_pool(10) }
-  benchmark.report('with threads pool of 20: ') { fibonacci_with_sleep_threaded_with_pool(20) }
-  benchmark.report('with threads pool of 40: ') { fibonacci_with_sleep_threaded_with_pool(40) }
+  benchmark.report('with 5 threads and pool: ') { fibonacci_with_sleep_threaded_with_pool(5) }
+  benchmark.report('with 10 threads and pool: ') { fibonacci_with_sleep_threaded_with_pool(10) }
+  benchmark.report('with 20 threads and pool: ') { fibonacci_with_sleep_threaded_with_pool(20) }
+  benchmark.report('with 40 threads and pool: ') { fibonacci_with_sleep_threaded_with_pool(40) }
   benchmark.report('parallel with 5 threads: ') { fibonacci_with_sleep_parallel(5) }
   benchmark.report('parallel with 10 threads: ') { fibonacci_with_sleep_parallel(10) }
   benchmark.report('parallel with 20 threads: ') { fibonacci_with_sleep_parallel(20) }
